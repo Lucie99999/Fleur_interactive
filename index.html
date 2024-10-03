@@ -9,14 +9,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/pictures/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/pictures/favicon-16x16.png">
     <link rel="manifest" href="assets/pictures/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Ma fleur vivante</title>
 </head>
 <body>
-    <form action="" method="post" class="js-search-form">
+    <!--Div pour insérer la fleur depuis Javascript-->
+    <div class="canvas js-canvas"></div>
+    <!-- Formulaire pour que l'utilisateur saisisse la ville qui l'intéresse-->
+    <form action="" method="post" class="form js-search-form">
         <label for="city">Tapez le nom de la ville</label>
         <input id="city" name="city" type="text" class="js-search-input">
         <button type="submit">Valider</button>
     </form>
-<script src="assets/js/main.js" type="module"></script>
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
