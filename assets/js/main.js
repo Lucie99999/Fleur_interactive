@@ -3,4 +3,4 @@ import {Flower} from '/modules/Flower.js';
 
 //Porte d'entrée du programme
 new Search();
-new Flower();
+new Flower(50);
