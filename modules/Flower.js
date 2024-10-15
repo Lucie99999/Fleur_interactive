@@ -40,7 +40,7 @@ class Flower{
     //En mode développement, méthode qui ajoute le repère.
     axesHelper(){
         const axesHelper = new THREE.AxesHelper( 100);
-        this.scene.add(axesHelper);
+        //this.scene.add(axesHelper);
     }
     //Méthode qui crée une caméra, notre point de vue.
     createCamera(){
