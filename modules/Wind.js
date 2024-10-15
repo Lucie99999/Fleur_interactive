@@ -7,6 +7,7 @@ En fonction de la latitude et de la longitude de la ville recherchée et en temp
 
 On définit la classe Wind qui va réaliser toutes les fonctionnalités citées ci-dessus.
  */
+import {Flower} from './Flower.js';
 
 class Wind {
 
@@ -24,7 +25,6 @@ class Wind {
     init(){
         this.buildURL();
         this.getWindData();
-        console.log(this._latitude,this._longitude);
     }
 
     //Méthode permettant de construire l'URL servant à la connexion à l'API en détails
@@ -48,7 +48,9 @@ class Wind {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
+                window.data.windDirection = data.current.wind_direction_10m;
+                window.data.windSpeed = data.current.wind_speed_10m;
+                new Flower(50);
             })
             .catch(error => {
                 console.log('Erreur de fetch',error);

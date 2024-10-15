@@ -47,9 +47,12 @@ class Search {
         if (userCityData){
             const latitudeSearched = userCityData['lat'];
             const longitudeSearched = userCityData['lng'];
+            window.data.city = this.cityData;
+            window.data.resetAnimation=true;
             new Wind(latitudeSearched,longitudeSearched);
         } else {
             alert('La ville saisie n\'existe pas.');
+            window.data.city = "";
         }
     }
 
@@ -80,18 +83,17 @@ class Search {
     getCityData(city) {
         //On vient corriger la saisie de l'utilisateur pour que tout soit en minuscule.
         const cityLower = city.toLowerCase();
-        let cityData = [];
+        this.cityData = [];
         for (let i = 0; i < this.cities.length; i++) {
             //On vient mettre également le nom de la ville présent dans les données en minuscule.
             const cityDataLower = this.cities[i].city.toLowerCase();
             //On compare les 2 noms de ville en minuscule.
             if (cityDataLower == cityLower){
-                cityData = this.cities[i];
-                return cityData;
+                this.cityData = this.cities[i];
+                return this.cityData;
                 break;
             }
         }
-        console.log(cityData);
     }
 
 }
